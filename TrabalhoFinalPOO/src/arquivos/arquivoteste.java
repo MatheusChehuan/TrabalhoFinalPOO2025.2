@@ -12,9 +12,9 @@ import java.util.Scanner;
 import java.util.Set;
 
 import calcularsalario.DependenteException;
-import calcularsalario.Parentesco;
 import entity.Dependente;
 import entity.Funcionario;
+import entity.Parentesco;
 
 	public class arquivoteste {
 
