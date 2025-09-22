@@ -8,7 +8,7 @@ public abstract class Pessoa {
 	protected String cpf;
 	protected LocalDate dataNascimento;
 
-	public Pessoa(String nome, String cpf, LocalDate dataNascimento) {
+	public Pessoa( String nome, String cpf, LocalDate dataNascimento) {
 		super();
 		this.nome = nome;
 		this.cpf = cpf;

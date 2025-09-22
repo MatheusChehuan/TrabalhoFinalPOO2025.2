@@ -8,7 +8,7 @@ public class Dependente extends Pessoa {
 	private Parentesco parentesco;
 	private int id_funcionario;
 
-	public Dependente( String nome, String cpf, LocalDate dataNascimento, Parentesco parentesco, int id_funcionario) throws DependenteException {
+	public Dependente( String nome, String cpf, LocalDate dataNascimento, Parentesco parentesco) throws DependenteException {
 		super( nome, cpf, dataNascimento);
 		this.parentesco = parentesco;
 		this.id_funcionario = id_funcionario;
