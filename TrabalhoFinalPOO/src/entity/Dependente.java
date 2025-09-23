@@ -3,7 +3,6 @@ package entity;
 import java.time.LocalDate;
 
 import calcularsalario.DependenteException;
-import calcularsalario.Parentesco;
 
 public class Dependente extends Pessoa {
 	private Parentesco parentesco;
