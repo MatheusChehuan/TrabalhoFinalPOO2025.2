@@ -4,23 +4,23 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 import conexao.ConnectionFactory;
 import entity.Funcionario;
 
-public class FuncionarioDAO {
+public class FuncionarioDao {
 
 	private Connection connection;
 
-	public FuncionarioDAO() {
+	public FuncionarioDao() {
 		connection = new ConnectionFactory().getConnection();
 	}
 
 	public void inserir(Funcionario funcionario) {
+		String sql1 = "truncate table funcionarios restart identity cascade;";
 		String sql = "insert into funcionarios(nome,cpf,data_nascimento,salario_bruto) values (?,?,?,?) returning id_funcionario";
 		try {
+			PreparedStatement stmt1 = connection.prepareStatement(sql1);
 			PreparedStatement stmt = connection.prepareStatement(sql);
 			
 			stmt.setString(1, funcionario.getNome());

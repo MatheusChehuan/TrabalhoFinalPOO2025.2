@@ -2,27 +2,23 @@ package persistence;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
-import calcularsalario.DependenteException;
 import conexao.ConnectionFactory;
 import entity.Dependente;
-import entity.Funcionario;
-import entity.Parentesco;
 
-public class DependenteDAO {
+public class DependenteDao {
 	private Connection connection;
 
-	public DependenteDAO() {
+	public DependenteDao() {
 		connection = new ConnectionFactory().getConnection();
 	}
 
 	public void inserir(Dependente dependente, int id_funcionario) {
+		String sql1 = "truncate table dependentes restart identity cascade;";
 		String sql = "insert into dependentes(nome,cpf,data_nascimento,parentesco,id_funcionario) values (?,?,?,?,?)";
 		try {
+			PreparedStatement stmt1 = connection.prepareStatement(sql1);
 			PreparedStatement stmt = connection.prepareStatement(sql);
 			stmt.setString(1, dependente.getNome());
 			stmt.setString(2, dependente.getCpf());

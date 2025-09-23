@@ -2,7 +2,7 @@ package conexao;
 
 import java.time.LocalDate;
 import java.util.Scanner;
-import persistence.FuncionarioDAO;
+import persistence.FuncionarioDao;
 import entity.Funcionario;
 
 public class TesteInserir {
@@ -24,7 +24,7 @@ public class TesteInserir {
 		
 		Funcionario funcionario = new Funcionario(nome, cpf, datanascimento, salariobruto);
 		
-		FuncionarioDAO dao = new FuncionarioDAO();
+		FuncionarioDao dao = new FuncionarioDao();
 		
 		dao.inserir(funcionario);
 	}
