@@ -29,8 +29,6 @@ public class FolhaPagamentoDAO {
 			stmt.setDouble(5, fp.getSalarioLiquido());
 			
 			stmt.execute();
-			stmt.close();//talvez esteja no lugar errado
-			connection.close();
 			
 		} catch (SQLException e) {
 			System.out.println("Problemas ao gravar registro");
